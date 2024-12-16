@@ -4,7 +4,7 @@ app.use(express.json());
 const mongoose = require("mongoose");
 const Product = require("./models/product.model.js");
 
-mongoose.connect("mongodb://127.0.0.1:27017/test").then(() => {
+mongoose.connect("mongodb+srv://amarkumarreddynew:zjq9aCiwMKeWNhSb@firstdb.l5hma.mongodb.net/?retryWrites=true&w=majority&appName=FirstDB").then(() => {
   app.listen(3000);
   console.log("Connected!");
 });
