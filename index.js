@@ -13,11 +13,6 @@ app.get("/", (request, response) => {
   response.send("hello amar");
 });
 
-app.get("/date", (request, response) => {
-  const date = new Date();
-  response.send(`Today date : ${date}`);
-});
-
 app.post("/api/products", async (request, response) => {
   try {
     const product = await Product.create(request.body);
