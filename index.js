@@ -13,8 +13,8 @@ mongoose.connect("mongodb+srv://amarkumarreddynew:zjq9aCiwMKeWNhSb@firstdb.l5hma
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.use("/register",userRegistration);
-app.use("/api/products", productRoutes);
+// app.use("/register",userRegistration);
+// app.use("/api/products", productRoutes);
 
 
 
