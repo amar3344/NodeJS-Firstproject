@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require("mongoose");
 const productRoutes = require("./routes/product.route.js")
 const userRegistration = require("./routes/userSignupLogin.js")
+const protectedRoute = require("./routes/product.route.js")
 
 mongoose.connect("mongodb+srv://amarkumarreddynew:zjq9aCiwMKeWNhSb@firstdb.l5hma.mongodb.net/?retryWrites=true&w=majority&appName=FirstDB").then(() => {
   app.listen(3000);
@@ -13,8 +14,9 @@ mongoose.connect("mongodb+srv://amarkumarreddynew:zjq9aCiwMKeWNhSb@firstdb.l5hma
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-// app.use("/register",userRegistration);
-// app.use("/api/products", productRoutes);
+app.use("/register",userRegistration);
+app.use("/",protectedRoute);
+app.use("/api/products", productRoutes);
 
 
 

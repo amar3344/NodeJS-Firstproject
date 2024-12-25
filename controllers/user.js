@@ -27,7 +27,7 @@ const login = async(request,response)=>{
             return response.status(401).json({message : "password inValid"})
         }
         const token = jwt.sign({userId : user._id}, "token")
-        response.status(200).json({userData:user,token:token})
+        response.status(200).json({userData:user,token:token}) 
     }catch(e){
         response.status(500).json({message:"login failed"})
     }
